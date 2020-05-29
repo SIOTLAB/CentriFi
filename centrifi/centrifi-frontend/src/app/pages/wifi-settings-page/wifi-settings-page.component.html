@@ -1,0 +1,90 @@
+<div class="page-container">
+    <form class="centered-form" *ngIf="wifiForm" [formGroup]="wifiForm">
+        <h3 class="settings-header full-column-width-centered" matSubheader>For the Entire WiFi Network:</h3>
+        <mat-form-field class="full-column-width-centered">
+            <mat-label>Network Name</mat-label>
+            <input matInput type="text"
+                formControlName="networkName"
+                placeholder="Enter a Wifi Network Name"
+                (keyup.enter)="onSave()">
+        </mat-form-field>
+        <div class="same-line">
+            <mat-form-field class="full-column-width-centered-with-button">
+                <mat-label>WiFi Password</mat-label>
+                <input matInput type="{{ showPassword ? 'text' : 'password' }}"
+                    formControlName="password"
+                    placeholder="Enter a WiFi Network Password"
+                    (keyup.enter)="onSave()"
+                    (keydown)="dataService.omit_special_char($event)"
+                    >
+            </mat-form-field>
+            <button (click)="onTogglePassword()" mat-flat-button color="primary" class="button small-button">
+                <span *ngIf="showPassword">Hide</span>
+                <span *ngIf="!showPassword">Show</span>
+            </button>
+        </div>
+        <span class="full-column-width-centered password-notice">
+            {{dataService.passwordNotice}}
+        </span>
+        <mat-form-field class="full-column-width-centered">
+            <mat-label>Security Option</mat-label>
+            <select matNativeControl required formControlName="security">
+                <option *ngFor="let option of securityOptions" value="{{option}}">{{option}}</option>
+            </select>
+        </mat-form-field>
+        <h3 class="settings-header full-column-width-centered heading-spacer" matSubheader>For an Individual Access Point:</h3>
+        <div formArrayName="aps">
+            <mat-list class="full-column-width-centered">
+                <mat-divider></mat-divider>     
+                <div *ngFor="let device of apsFormArray.controls; index as idx" class="form-group">
+                    <mat-list-item class="left-align">
+                        <mat-icon class="larger-icon icon-list-spacing" color="primary" matListIcon>router</mat-icon>
+                        <p matLine class="list-title"> Access Point {{idx+1}} </p>
+                        <p matLine>
+                            <span class="list-left-column">Device Name: </span>
+                            {{networkInfo.aps[idx].apType}}
+                        </p>
+                        <p matLine>
+                            <span class="list-left-column">IP Address:</span>
+                            {{networkInfo.aps[idx].apIP}}
+                        </p>
+                        <p matLine>
+                            <span class="list-left-column">MAC Address:</span>
+                            {{networkInfo.aps[idx].apMAC}}
+                        </p>
+                        <p matLine class="matline-extra-top-margin">
+                            <mat-form-field class="full-column-width-centered-with-button">
+                                <mat-label>Channel</mat-label>
+                                <select matNativeControl required [formControlName]="idx">
+                                    <option *ngFor="let channel of channelOptions" value="{{channel}}">{{channel}}</option>
+                                </select>
+                            </mat-form-field>       
+                        </p>     
+                        </mat-list-item>
+                    <mat-divider></mat-divider>
+                </div>
+            </mat-list>
+        </div>   
+        <div *ngIf="wifiForm && wifiForm.invalid && wifiForm.touched" class="alert">
+            Please fill out all fields or remove illegal characters
+        </div>
+        <div *ngIf="!this.networkInfoReceived" class="alert">
+            Network info could not be retrieved.
+        </div>
+        <div *ngIf="!settingsRetrieved" class="alert">
+            WiFi settings could not be retrieved.
+        </div>
+        <div *ngIf="saveFailed" class="alert">
+            WiFi settings could not be applied!
+        </div>
+        <div *ngIf="saveSuccess" class="success">
+            WiFi settings applied succesfully!
+        </div>
+    </form>
+    <button (click)="onBack()" mat-flat-button color="primary" class="button medium-button">
+        Back
+    </button>
+    <button [disabled]="!wifiForm || (wifiForm && wifiForm.invalid)" (click)="onSave()" mat-flat-button color="primary" class="button medium-button">
+        Save Settings
+    </button>
+</div>

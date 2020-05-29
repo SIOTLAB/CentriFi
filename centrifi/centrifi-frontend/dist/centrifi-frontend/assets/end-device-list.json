@@ -1,0 +1,16 @@
+{
+    "devices": [
+        {
+            "deviceIP": "192.168.1.232",
+            "deviceName": "AJs iPhone",
+            "deviceMAC":"6C:B0:CE:28:E8:B0",
+            "roamingRestricted": "no"
+        },
+        {
+            "deviceIP": "192.168.1.233",
+            "deviceName": "AJs Macbook",
+            "deviceMAC":"6D:C2:CE:28:E8:B1",
+            "roamingRestricted": "192.168.1.1"
+        }
+    ]
+}

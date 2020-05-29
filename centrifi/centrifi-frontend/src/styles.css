@@ -1,0 +1,235 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+*{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url(/static/MaterialIcons-Regular.woff2) format('woff2'),
+      url(/assets/MaterialIcons-Regular.woff2) format('woff2') /*TODO removed when no longer testing locally*/
+  }
+
+.material-icons {
+font-family: 'Material Icons';
+font-weight: normal;
+font-style: normal;
+font-size: 36px;
+display: inline-block;
+line-height: 1;
+text-transform: none;
+letter-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+direction: ltr;
+
+/* Support for all WebKit browsers. */
+-webkit-font-smoothing: antialiased;
+/* Support for Safari and Chrome. */
+text-rendering: optimizeLegibility;
+
+/* Support for Firefox. */
+-moz-osx-font-smoothing: grayscale;
+
+/* Support for IE. */
+font-feature-settings: 'liga';
+}
+
+.larger-icon{
+font-size: 36px !important;
+width: 36px !important;
+height: 36px !important;
+}
+
+.page-title{
+    text-align: center;
+    margin: auto;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.page-container{
+    text-align: center;
+    margin: auto;
+    width: 90vw;
+}
+
+.menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.centered-form{
+    margin: auto;
+    display: block;
+}
+
+.button{
+    height: 40px;
+    margin: 15px !important;
+}
+
+.medium-button{
+    width: 200px;
+}
+
+.small-button{
+    width: 40px;
+}
+
+.same-line{
+    display: inline;
+}
+
+.button-spacer-left{
+    display: inline-block;
+}
+
+.button-spacer-right{
+    display: inline-block;
+
+}
+
+.medium-dropdown{
+    margin: 15px;
+    width: 300px;
+}
+
+.small-dropdown{
+    margin: 15px;
+    width: 150px;
+}
+
+.alert {
+    color: #c91111
+}
+
+.success {
+    color: #167937
+}
+.full-column-width-margin{
+    margin: 15px !important;
+}
+
+.left-align{
+    text-align: left;
+}
+
+.list-title{
+    font-weight: bold;
+    margin-bottom: 0.3rem !important;
+}
+
+.list-left-column{
+    display:inline-block;
+    font-weight: bold;
+    width: 6rem;
+    text-align: right;
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+}
+
+.chart{
+    height: 400px;
+    position: relative;
+}
+
+.full-logo{
+    width: 300px;
+    margin: auto;
+    display: block;
+}
+
+.matline-extra-top-margin{
+    margin-top: 25px !important;
+}
+
+.icon-list-spacing{
+    padding-bottom:64px !important;
+}
+
+.settings-header{
+    color: rgba(0,0,0,.54);
+    text-align: left;
+    padding-left: 0px !important;
+    padding-bottom: 24px !important;
+    font-size: 18px;
+}
+
+.heading-spacer{
+    padding-top: 48px !important;
+}
+
+.password-notice{
+    font-size: 0.75rem;
+    padding-bottom: 15px;
+}
+
+/* Desktop */
+@media screen and (min-width : 600px)
+{    
+    .full-column-width{
+        width: 540px;
+        display: block !important;
+    }
+    .full-column-width-centered{
+        width: 540px;
+        display: block !important;
+        margin:auto;
+    }
+    .full-column-width-centered-with-button{
+        width: 445px;
+        display: inline-block !important;
+        margin:auto;
+    }
+    
+    .full-column-button{
+        width: 540px;
+    }
+
+}
+@media screen and (min-width : 1200px)
+{    
+    .full-width{
+        width: 1140px;
+        display: block !important;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width : 600px)
+{
+    .full-column-width-centered{
+        width: 100%;
+        display: block !important;
+        margin:auto;
+    }
+
+    .full-column-width-centered-with-button{
+        width: calc(100% - 95px) !important;
+        display: inline-block !important;
+        margin:auto;
+    }
+
+    .full-column-button{
+        width: 100%;
+    }
+
+    .full-column-width{
+        width: 100%;
+        display: block !important;
+    }
+}
+@media screen and (max-width : 1200px)
+{
+    .full-width{
+        width: 100%;
+        display: block !important;
+        margin:auto;
+    }
+}

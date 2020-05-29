@@ -1,0 +1,57 @@
+<div class="page-container">
+    <mat-list class="full-column-width-centered">
+        <form *ngIf="formPrepared" [formGroup]="endDeviceForm">
+            <div formArrayName="devices">
+                <mat-divider></mat-divider>     
+                <div *ngFor="let device of devicesFormArray.controls; index as idx" class="form-group">
+                    <mat-list-item class="left-align">
+                        <mat-icon class="larger-icon icon-list-spacing" color="primary" matListIcon>phonelink_ring</mat-icon>
+                        <p matLine class="list-title"> Connected Device {{idx+1}} </p>
+                        <p matLine>
+                            <span class="list-left-column">Device Name:</span>
+                            {{endDeviceList.devices[idx].deviceName}}
+                        </p>
+                        <p matLine>
+                            <span class="list-left-column">IP Address:</span>
+                            {{endDeviceList.devices[idx].deviceIP}}
+                        </p>
+                        <p matLine>
+                            <span class="list-left-column">MAC Address:</span>
+                            {{endDeviceList.devices[idx].deviceMAC}}
+                        </p>
+                        <p matLine class="matline-extra-top-margin">
+                            <mat-form-field class="full-column-width-centered-with-button">
+                                <mat-label>Roaming Access</mat-label>
+                                <select matNativeControl required [formControlName]="idx">
+                                    <option *ngFor="let option of networkAreaOptions" value="{{option.formControlValue}}">{{option.formControlValue}}</option>
+                                </select>
+                            </mat-form-field>       
+                        </p>     
+                    </mat-list-item>
+                    <mat-divider></mat-divider>     
+                </div>    
+            </div>
+        </form>
+    </mat-list>   
+    <div *ngIf="endDeviceForm.invalid && endDeviceForm.touched" class="alert">
+        Please fill out all fields
+    </div>
+    <div *ngIf="!this.networkInfoReceived" class="alert">
+        Network info could not be retrieved.
+    </div>
+    <div *ngIf="!this.endDeviceInfoReceived" class="alert">
+        End device info could not be retrieved.
+    </div>
+    <div *ngIf="saveFailed" class="alert">
+        Connected device settings could not be applied!
+    </div>
+    <div *ngIf="saveSuccess" class="success">
+        Connected device applied succesfully!
+    </div>
+    <button (click)="onBack()" mat-flat-button color="primary" class="button medium-button">
+        Back
+    </button>
+    <button [disabled]="endDeviceForm.invalid" (click)="onSave()" mat-flat-button color="primary" class="button medium-button">
+        Save Settings
+    </button>
+</div>

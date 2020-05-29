@@ -1,0 +1,24 @@
+<div class="page-container">
+    <form class="centered-form">
+        <mat-form-field class="full-column-width-centered">
+            <mat-label>Password</mat-label>
+            <input matInput type="password"
+                [(ngModel)]="password" name="password"
+                placeholder="Enter your CentriFi password"
+                (keyup.enter)="onLogin()"
+                >
+        </mat-form-field>
+    </form>
+    <div *ngIf="unreachedServer" class="alert">
+        Something is very wrong, and we don't know what!
+    </div>
+    <div *ngIf="incorrectPassword" class="alert">
+        Incorrect Password!
+    </div>
+    <div *ngIf="loggedIn" class="success">
+        Logged in successfully!
+    </div>
+    <button (click)="onLogin()" mat-flat-button color="primary" class="button medium-button">
+        Login
+    </button>
+</div>

@@ -1,0 +1,15 @@
+{
+    "networkName":"Centrifi",
+    "password": "myPassword",
+    "security": "WPA3",
+    "aps": [
+        {
+            "apIP":  "192.168.1.1",
+            "channel":  "1"    
+        },
+        {
+            "apIP":  "192.168.1.2",
+            "channel":  "11"    
+        }
+    ]
+}

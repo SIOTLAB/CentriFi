@@ -1,0 +1,71 @@
+<div class="page-container">
+    <div class="menu-container">
+        <div class="full-column-width-margin">
+            <mat-list class="full-column-width left-align">
+                <ng-container *ngIf="networkInfo">
+                    <h3 matSubheader>WiFi Network Info</h3>
+                    <mat-divider></mat-divider> 
+                    <mat-list-item>
+                        <mat-icon class="larger-icon" color="primary" matListIcon>wifi</mat-icon>    
+                        <h4 matLine>Network Name: {{networkInfo.wifiName}}</h4>
+                    </mat-list-item>
+                    <h3 matSubheader>Mesh Network Info</h3>
+                    <mat-divider></mat-divider> 
+                    <mat-list-item>
+                        <mat-icon class="larger-icon" color="primary" matListIcon>wifi_tethering</mat-icon>    
+                        <h4 matLine>Mesh Key: {{networkInfo.meshKey}}</h4>
+                    </mat-list-item>
+                </ng-container>
+            </mat-list>      
+        </div>
+        <div class="full-column-width-margin">
+            <mat-list class="full-column-width left-align">
+                <ng-container *ngIf="networkInfo">
+                    <h3 matSubheader>Access Points</h3>
+                    <mat-divider></mat-divider>     
+                    <ng-container *ngFor="let ap of networkInfo.aps; let i = index;">
+                        <mat-list-item>
+                            <mat-icon class="larger-icon" color="primary" matListIcon>router</mat-icon>
+                            <p matLine class="list-title"> Access Point {{i+1}} </p>
+                            <p matLine>
+                                <span class="list-left-column">IP Address:</span>
+                                {{ap.apIP}}
+                            </p>
+                            <p matLine>
+                                <span class="list-left-column">MAC Address:</span>
+                                {{ap.apMAC}}
+                            </p>
+                            <p matLine>
+                                <span class="list-left-column">AP Type:</span>
+                                {{ap.apType}}
+                            </p>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>     
+                    </ng-container>
+                </ng-container>
+            </mat-list>
+        </div>
+    </div>
+    <div class="menu-container">
+        <button mat-flat-button color="primary" 
+            (click)="clickCFPassword()" class="button full-column-button">
+            Change Centrifi Password
+        </button>
+        <button mat-flat-button color="primary"
+        (click)="clickWifiSettings()" class="button full-column-button">
+            Change WiFi Settings 
+        </button> 
+        <button mat-flat-button color="primary"
+        (click)="clickNetworkStatistics()" class="button full-column-button">
+            View All Network Statistics
+        </button>  
+        <button mat-flat-button color="primary"
+        (click)="clickEndDevice()" class="button full-column-button">
+            Connected Device Configuration 
+        </button> 
+    </div>
+    <div *ngIf="!infoRecieved" class="alert">
+        Network info could not be loaded!
+    </div>
+<div class="page-container">
+

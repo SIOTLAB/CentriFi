@@ -1,0 +1,8 @@
+:host ::ng-deep .chart-legend {
+    position: absolute;
+    top: 330px;
+    left: 0px;
+}
+:host ::ng-deep .chart-legend .legend-labels {
+    overflow: auto;
+}

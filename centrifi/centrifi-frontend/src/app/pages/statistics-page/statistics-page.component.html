@@ -1,0 +1,51 @@
+<div class="page-container">
+    <form class="centered-form full-width">
+        <div class="chart" *ngIf="dataProcessed && !dataMismatch">
+            <ngx-charts-line-chart
+            [scheme]="colorScheme"
+            [legend]="legend"
+            [legendTitle]="legendTitle"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxis]="xAxis"
+            [yAxis]="yAxis"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [timeline]="timeline"
+            [results]="activeStats"
+            >
+            </ngx-charts-line-chart>    
+        </div>
+        <mat-form-field class="medium-dropdown">
+            <mat-label>Network Area</mat-label>
+            <mat-select
+                [formControl]="selectedBreadth"
+                (selectionChange)="onDataSelection()"
+                multiple>
+                <mat-option *ngFor="let option of breadthOptions" value="{{option}}">{{option}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="small-dropdown">
+            <mat-label>Time Interval</mat-label>
+            <mat-select
+                matNativeControl
+                required
+                [(ngModel)]="selectedInterval"
+                name="selectedInterval"
+                (selectionChange)="onDataSelection()"
+                >
+                <mat-option *ngFor="let option of intervalOptions" value="{{option}}">{{option}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div *ngIf="dataCouldNotBeReceived" class="alert">
+            WiFi statistics could not be retrieved.
+        </div>
+        <div *ngIf="dataMismatch" class="alert">
+            Server error, network info does not match statistics.
+        </div>
+    </form>
+    <button (click)="onBack()" mat-flat-button color="primary" class="button medium-button">
+        Back
+    </button>
+</div>

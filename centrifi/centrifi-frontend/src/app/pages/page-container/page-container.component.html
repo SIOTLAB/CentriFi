@@ -1,0 +1,10 @@
+<img src="/static/centrifi-logo.svg" class="full-logo">
+<div class="page-title">
+    {{dataService.currentPage}}
+</div>
+<app-homepage *ngIf="dataService.currentPage === dataService.homePage"></app-homepage>
+<app-login-page *ngIf="dataService.currentPage === dataService.loginPage"></app-login-page>
+<app-centrifi-password-page *ngIf="dataService.currentPage === dataService.cfPasswordPage"></app-centrifi-password-page>
+<app-wifi-settings-page *ngIf="dataService.currentPage === dataService.wifiSettingsPage"></app-wifi-settings-page>
+<app-statistics-page *ngIf="dataService.currentPage === dataService.statsPage"></app-statistics-page>
+<app-end-device-page *ngIf="dataService.currentPage === dataService.endDevicePage"></app-end-device-page>
