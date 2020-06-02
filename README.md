@@ -8,7 +8,7 @@ From there, CentriFi can be further configured via a web inteface, where the fol
 - The CentriFi admin password that gives access to configuration
 - The SSID, set the password, and the set the security settings (WPA2/WPA3) of the client wifi network
 - The radio channel for the client wifi network of each router on the network.
-- Whether client devices should be allowed to roam from router to router or be restricted to connect to one specific router on the network
+- Whether a specific client device should be allowed to roam from router to router or be restricted to connect to one specific router on the network
 
 This web interface also allows users to view statistics about the network bandwidth being used by the network as a whole or by each router in the network.
 
