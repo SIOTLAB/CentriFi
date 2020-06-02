@@ -12,7 +12,7 @@ From there, CentriFi can be further configured via a web inteface, where the fol
 
 This web interface also allows users to view statistics about the network bandwidth being used by the network as a whole or by each router in the network.
 
-To see a demo of the system, go to this link:
+To see a demo of the system, go to this link: https://youtu.be/GI7cOSr47i0
 
 ### INSTALLATION GUIDE
 
@@ -44,12 +44,12 @@ After the first access point has been configured, it will reboot. Once it is fin
 
 Then, continue following the prompts to configure the additional access points.
 
-Once you have configured all of the access points, you can then move them around to set up the mesh network within the location you want to set up the mesh. The master access point needs to be connected to ethernet and power, the slave access points just need to be connected to power.
+Once you have configured all of the access points, you can then move them around to set up the mesh network within the location you want to set up the mesh. The master access point needs to be connected to ethernet (via the WAN port) and power, the slave access points just need to be connected to power.
 
-Once they are set up and powered on, wait 1-2 minutes and they should be up and running the mesh.
+Once they are set up and powered on, wait 1-2 minutes and they should be up and running the mesh. Each router will be running CentriFi on top of OpenWrt 19.07 and configured with an new IP address starting with the master router at 192.168.1.1, with the following routers having the sequential IP addresses 192.1.168.2, 192.1.168.3,...
 
 To configure the devices further, and look at the settings, connect to the network 'CentriFi' with password 'centrifi'.
 
-Then, on that device, in a web browser's address bar, visit 192.168.1.1 and you should see the CentriFi homepage.
+Then, on that device, in a web browser's address bar, visit 192.168.1.1:8000 and you should see the CentriFi homepage. If you still need to access OpenWrt's Luci web interface you can do so at the corresponding IP address for each router (e.g. 192.168.1.1 or 192.168.1.3).
 
-There is a demo video of the system linked above that should help with any questions regarding further configuration.
+The demo video of the system linked above should help with any questions regarding further configuration.
