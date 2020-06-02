@@ -1,8 +1,18 @@
 # CentriFi
 
-A platform for central management of mesh OpenWRT WiFi access points
+CentriFi is an access point management system that makes creating robust and customizable networks realistic and affordable.  Built on the free OpenWRT platform, CentriFi allows for local area networks to be exactly configured and maintained on low cost hardware, intuitively and easily.
 
-README in progress
+Currently CentriFi sets up a mesh network automatically via an install script. 
+
+From there, CentriFi can be further configured via a web inteface, where the following settings can currently be configured:
+- The CentriFi admin password that gives access to configuration
+- The SSID, set the password, and the set the security settings (WPA2/WPA3) of the client wifi network
+- The radio channel for the client wifi network of each router on the network.
+- Whether client devices should be allowed to roam from router to router or be restricted to connect to one specific router on the network
+
+This web interface also allows users to view statistics about the network bandwidth being used by the network as a whole or by each router in the network.
+
+To see a demo of the system, go to this link:
 
 ### INSTALLATION GUIDE
 
