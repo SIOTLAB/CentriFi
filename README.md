@@ -43,3 +43,13 @@ If you have additional access points to configure:
 After the first access point has been configured, it will reboot. Once it is finished rebooting, you can disconnect it and connect the next access point to be configured.  Once again, connect the access points WAN port via ethernet to the internet, and then connect it your computer (running the install script) using the additionall ethernet cable and any of the LAN ports on the device.  Again, wait around 10-15 seconds, or until the lights on the port show a stable connection (if there are lights for the port).
 
 Then, continue following the prompts to configure the additional access points.
+
+Once you have configured all of the access points, you can then move them around to set up the mesh network within the location you want to set up the mesh. The master access point needs to be connected to ethernet and power, the slave access points just need to be connected to power.
+
+Once they are set up and powered on, wait 1-2 minutes and they should be up and running the mesh.
+
+To configure the devices further, and look at the settings, connect to the network 'CentriFi' with password 'centrifi'.
+
+Then, on that device, in a web browser's address bar, visit 192.168.1.1 and you should see the CentriFi homepage.
+
+There is a demo video of the system linked above that should help with any questions regarding further configuration.
