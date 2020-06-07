@@ -40,7 +40,7 @@ First, power on the master access point, and connect it to the internet using an
 Then, follow the prompts in the terminal window to configure the first (master) access point.
 
 If you have additional access points to configure:
-After the first access point has been configured, it will reboot. Once it is finished rebooting, you can disconnect it and connect the next access point to be configured.  Once again, connect the access points WAN port via ethernet to the internet, and then connect it your computer (running the install script) using the additionall ethernet cable and any of the LAN ports on the device.  Again, wait around 10-15 seconds, or until the lights on the port show a stable connection (if there are lights for the port).
+After the first access point has been configured, it will reboot. Once it is finished rebooting, you can disconnect it and connect the next access point to be configured.  Once again, connect the access points WAN port via ethernet to the internet, and then connect it your computer (running the install script) using the additional ethernet cable and any of the LAN ports on the device.  Again, wait around 10-15 seconds, or until the lights on the port show a stable connection (if there are lights for the port).
 
 Then, continue following the prompts to configure the additional access points.
 
